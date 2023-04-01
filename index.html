@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.png" type="image/png">
+
+        <meta name="description" content="Safe-link is a third-party tool that checks the integrity of websites, providing users with information on whether a website is safe to visit.">
+        <title>Safe-Link | Website Integrity Checker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23117bbd' d='M0 0h100v100H0z'%3E%3C/path%3E%3Cpath fill='%23fff' d='M44.4 50h-9.9l5-8.6L40.1 38 33.5 50l6.6 12 1.9-3.3zM53.2 34.2l-6.6 11.9 6.6 11.9 6.6-11.9zM66.8 50L61.8 38l1.9-3.3L67.3 50l-4.6 7.9-1.9-3.3zM48.1 58.5l5 8.6h-9.9l-1.9-3.3 4.6-7.9-4.6-7.9 1.9-3.3h9.9l-5 8.6L59.9 50l-11.8 20.4-11.8-20.4 5-8.6h9.9l1.9 3.3-4.6 7.9 4.6 7.9-1.9 3.3H39.1l5-8.6L40.1 50z'%3E%3C/path%3E%3C/svg%3E" type="image/svg+xml">
+    
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<style>
+
+    
+</style>
+<body>
+    <div class="main">
+        <h1 class="title">✅ Safe-link Redirect</h1>
+        <h2 id="message"></h2>
+        <p class="text">Please wait i'm protecting you</p>
+        <code id="currentUrl"></code>
+        <div id="loading">
+            <i class="fa fa-spinner fa-spin"></i>
+            <span id="timer"></span>
+            <div id="check-message">Checking website integrity...</div>
+            <div id="safe-message">Website is safe!</div>
+        </div>
+        <button type="button" class="button" id="redirect">Take me there</button>
+        <footer>
+
+        <p>Safe-link is a third party tool to check website integrity allowing user if the website is safe to visit</p>
+        <p>Generate now! no Sign up need!</p>
+            <input type="text" id="urlInput" placeholder="Enter URL">
+            <input type="text" id="messageInput" placeholder="Enter Message" required>
+            <button onclick="merge()">Generate</button>
+            
+                <input type="text" id="mergeUrl">
+                <button onclick="copyToClipboard('mergeUrl')">Copy</button>
+            
+            <div id="url-error"></div>
+            <div id="message-error"></div>
+        <script>
+            function copyToClipboard(inputId) {
+                var copyText = document.getElementById(inputId);
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); /* For mobile devices */
+                document.execCommand("copy");
+                alert("Copied the text: " + copyText.value);
+            }
+        </script>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="main.js"></script>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const message = urlParams.get('message');
+    const redirectUrl = urlParams.get('redirectURL');
+
+    document.getElementById('message').innerHTML = message;
+    document.getElementById('currentUrl').innerHTML = redirectUrl;
+
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('redirect').style.display = 'none';
+
+    let secondsLeft = 5;
+    const timerDisplay = document.getElementById('timer');
+    const checkMessageDisplay = document.getElementById('check-message');
+    const safeMessageDisplay = document.getElementById('safe-message');
+
+    const timerInterval = setInterval(() => {
+        secondsLeft--;
+        timerDisplay.innerHTML = secondsLeft;
+
+        if (secondsLeft === 0) {
+            clearInterval(timerInterval);
+            checkMessageDisplay.style.display = 'none';
+            setTimeout(() => {
+                safeMessageDisplay.style.display = 'block';
+                document.getElementById('redirect').style.display = 'block';
+                document.getElementById('loading').style.display = 'none';
+            }, 3000);
+        }
+    }, 1000);
+
+    document.getElementById('redirect').addEventListener('click', () => {
+        window.location.href = redirectUrl;
+    });
+</script>
+</body>
+</html> 

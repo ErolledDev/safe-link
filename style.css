@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #4d4d4d;
+  }
+  
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 15px;
+    text-align: center;
+  }
+  
+  .title {
+    margin-bottom: 30px;
+    line-height: 1.2;
+  }
+  
+  .text {
+    max-width: 800px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  code {
+    display: block;
+    word-break: break-word;
+  }
+  
+  .button {
+    display: inline-block;
+    min-width: 200px;
+    margin-bottom: 30px;
+    padding: 13px 15px;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background-color: #67b279;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button:hover,
+  .button:focus {
+    background-color: #58a273;
+    outline: 0;
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    padding-left: 10px;
+    background: rgb(60,41,111);
+    background: -moz-linear-gradient(336deg, rgba(60,41,111,0.9528186274509804) 0%, rgba(53,92,36,1) 35%, rgba(7,46,54,1) 100%);
+    background: -webkit-linear-gradient(336deg, rgba(60,41,111,0.9528186274509804) 0%, rgba(53,92,36,1) 35%, rgba(7,46,54,1) 100%);
+    background: linear-gradient(336deg, rgba(60,41,111,0.9528186274509804) 0%, rgba(53,92,36,1) 35%, rgba(7,46,54,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3c296f",endColorstr="#072e36",GradientType=1);
+  }
+  
+  footer input,
+  footer button,
+  footer span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+    
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 15px;
+  }
+  
+  footer input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100px;
+  }
+  
+  footer button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #67b279;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  footer button:hover {
+    background-color: #58a273;
+  }
+  
+  footer span {
+    display: flex;
+    align-items: center;
+  }
+  
+  footer span input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100px;
+  }
+  
+  footer span button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #67b279;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  footer span button:hover {
+    background-color: #58a273;
+  }
+  
+  #url-error,
+  #message-error {
+    color: #f00;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .link {
+    color: #67b279;
+  }
+  
+  .link:hover,
+  .link:focus {
+    text-decoration: none;
+  }
+  
+  .wrap {
+    text-align: center;
+  }
+  
