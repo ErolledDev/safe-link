@@ -13,7 +13,7 @@ function merge() {
   }
 
   const encodedMessage = encodeURIComponent(messageInput);
-  const mergedUrl = `https://www.mywebsite.com/redirect.html?url=${encodeURIComponent(urlInput)}&message=${encodedMessage}`;
+  const mergedUrl = `https://safe-link-drab.vercel.app/index.html?url=${encodeURIComponent(urlInput)}&message=${encodedMessage}`;
 
   document.getElementById("mergeUrl").value = mergedUrl;
 }
